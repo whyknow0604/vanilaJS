@@ -28,4 +28,32 @@ player.points = 100;
 player.lastName = "potato";
 
 
+// function 생성
+function sayHello(a){
+    console.log("hello my Friend ", a);
+}
+
+sayHello("minho");
+
+
+// 숫자를 인자로 인식하는 함수 만들기
+function plus(a,b){
+    console.log(a+b);
+}
+plus(10, 20);
+
+
+// Object 안에 funciton 작성하기
+
+const Person = {
+    name : 'minho',
+    sayHello: function(a){
+        console.log("person Hello " + a);
+    },
+};
+
+Person.sayHello('nico');
+
+
+
 
