@@ -54,6 +54,48 @@ const Person = {
 
 Person.sayHello('nico');
 
+// function에서 리턴을 받는 방법
 
+const age = 96;
+function calculateAge(age){
+    let krage = age + 2;
+    return krage;
+}
 
+const krage = calculateAge(age);
 
+console.log(krage);
+
+//prompt()는 웹 화면에서 데이터를 입력받음
+
+// type string -> int 하는 코드
+
+parseInt("14")
+// 숫자로 변환될 수 있는게 안들어오면 NaN을 return  한다.
+// isNaN: NaN이면 true, NaN이 아니면 false
+
+// if 구문
+// and 는 && or 는 || 을 사용하면 된다
+
+const aage = parseInt(prompt("How old are you: "));
+
+function p(a){
+    console.log(a);
+}
+
+if(isNaN(aage)){
+    p("Please write a number");
+}else if(aage<18){
+    p("You are too young");
+}else if(aage >= 18 && aage <= 50){
+    p("you can drink");
+}else if(aage > 50 && aage <= 80){
+    p("you should exeercise");
+}else{
+    p("you should ready to die");
+}
+
+// && || 할때 괄호 ()에 묶어서 결과의 결과로 조건을 판정할 수 있다.
+
+//document.title 을 사용해서 html을 수정 및 값을 가져올 수 있다.
+// 이미 html과 javascript는 이미 연결되어있기 때문이다.
