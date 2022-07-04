@@ -10,6 +10,7 @@
 // Ex) nonsense.push('newData')
 
 // Object 를 사용하는 방법
+/*
 const player = {
     name: "minho",
     points: 10,
@@ -99,3 +100,42 @@ if(isNaN(aage)){
 
 //document.title 을 사용해서 html을 수정 및 값을 가져올 수 있다.
 // 이미 html과 javascript는 이미 연결되어있기 때문이다.
+*/
+const loginForm = document.querySelector('#login-form');
+const loginInput = loginForm.querySelector('input');
+const loginButton = loginForm.querySelector('button');
+const greeting = document.querySelector('#greeting');
+
+const HIDDEN_CLASSNAME = 'hidden';
+const USERNAME_KEY = 'username';
+
+function onLoginSubmit(evnet){
+    evnet.preventDefault(); // 기본적인 테그의 기능을 실행하지 않는 코드
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY,username);
+    paintGreetings(username);
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+
+const link = document.querySelector('a');
+
+function handleLinkClick(event){
+    event.preventDefault();
+    console.log(event);
+}
+
+function paintGreetings(username){
+    greeting.innerText = `hello ${localStorage.getItem(username)}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if(savedUsername === null){
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+}else{
+    paintGreetings(USERNAME_KEY);
+}
