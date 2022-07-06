@@ -127,7 +127,7 @@ function handleLinkClick(event){
 }
 
 function paintGreetings(username){
-    greeting.innerText = `hello ${localStorage.getItem(username)}`;
+    greeting.innerText = `hello ${localStorage.getItem(USERNAME_KEY)}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
