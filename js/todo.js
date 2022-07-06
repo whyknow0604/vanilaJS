@@ -20,7 +20,6 @@ function getToDos(){
         const localTodos = JSON.parse(localStorage.getItem("todos"));
         toDos = localTodos;
         localTodos.forEach(paintToDo);
-        
     }
 }
 
